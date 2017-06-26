@@ -1,0 +1,566 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #bababa;
+    position: relative;
+}
+/*设置小黄人的头发*/
+.hair-num1{
+    width:100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 8px solid #000000;
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
+    transform: rotate(9deg);
+    position: absolute;
+    left: 226px;
+    top:-26px;
+    animation: anim1 1s linear infinite;
+}
+@keyframes anim1 {
+    from{
+        transform: rotate(9deg);
+    }
+    50%{
+        transform: rotate(16deg);
+    }
+    to{
+        transform: rotate(4deg);
+    }
+}
+.hair-num2{
+    width:90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 8px solid #000000;
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
+    transform: rotate(17deg);
+    animation: anim2 1ms linear infinite ;
+    position: absolute;
+    left: 242px;
+    top:-13px;
+}
+@keyframes anim2 {
+    from{
+        transform: rotate(15deg);
+    }
+    50%{
+        transform: rotate(20deg);
+    }
+    to{
+        transform: rotate(10deg);
+    }
+}
+/*设置小黄人的黄色的身体*/
+.yellow-body{
+    margin: 50px 0 0 200px;
+    width: 246px;
+    height: 406px;
+    background-color: #f9d946;
+    border-radius:123px;
+    border:4px solid #000;
+    position: relative;
+    overflow: hidden;
+    /*z-index: 1;*/
+    animation: anim6 2s linear infinite alternate;
+}
+@keyframes anim6 {
+    0%{
+        transform: rotate(1deg);
+    }
+    100%{
+        transform: rotate(-1deg);
+    }
+}
+.face{
+    position: relative;
+}
+/*设置小黄人的眼镜部分*/
+.eye-glasses-l{
+    width: 90px;
+    height: 90px;
+    border:4px solid #000;
+    border-radius: 50%;
+    position: absolute;
+    left: 25px;
+    top:40px;
+    background-image: radial-gradient(circle,
+        black 0,black 20px,
+        white 20px,white
+    );
+    z-index: 1;
+}
+.eye-glasses-r{
+    width: 90px;
+    height: 90px;
+    border:4px solid #000;
+    border-radius: 50%;
+    position: absolute;
+    left: 123px;
+    top:40px;
+    background-image: radial-gradient(circle,
+    black 0,black 20px,
+    white 20px,white
+    );
+    z-index: 1;
+
+}
+/*设置小黄人的眼白*/
+.eyes-white{
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    left: 43px;
+    top:33px;
+    transform-origin: 0px 10px;
+    animation: anim3 3s linear infinite reverse;
+}
+@keyframes anim3 {
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+/*设置眼镜的腿儿*/
+.glasses-l{
+    width: 50px;
+    height: 20px;
+    background-color: #000;
+    transform: rotate(13deg);
+    position: absolute;
+    left: 0px;
+    top:84px;
+}
+.glasses-r{
+    width: 50px;
+    height: 20px;
+    background-color: #000;
+    transform: rotate(-14deg);
+    position: absolute;
+    left: 192px;
+    top:77px;
+}
+/*设置小黄人的嘴巴*/
+.mouth{
+    width: 50px;
+    height: 40px;
+    border: 4px solid #000;
+    background-color: white;
+    border-bottom-left-radius: 20px 25px;
+    transform: rotate(-41deg);
+    position: absolute;
+    left: 95px;
+    top: 150px;
+    animation: anim5 200ms infinite alternate;
+}
+@keyframes anim5 {
+    0%{
+        border-bottom-left-radius: 20px 25px;
+    }
+    100%{
+        border-bottom-left-radius: 40px 25px;
+    }
+}
+/*将嘴部上边的角挡上*/
+.mouth-hidden{
+    width:70px;
+    height:40px;
+    border-bottom:4px solid #000000;
+    background-color:#f9d946 ;
+    transform: rotate(41deg);
+    position: absolute;
+    left: 4px;
+    top: -18px;
+}
+
+/*设置小黄人裤子的下边的半圆*/
+.pants-bottom{
+    width: 246px;
+    height: 123px;
+    border-radius: 0 0 123px 123px;
+    background-color: #2074a0;
+    border-top: 4px solid #000;
+    position: absolute;
+    left:0;
+    top:281px;
+}
+/*设置裤子的左边的背带*/
+.pants-straps-l{
+    width: 100px;
+    height: 20px;
+    border: 4px solid #000;
+    transform: rotate(45deg);
+    background-color:#2074a0 ;
+    position: absolute;
+    left:-36px;
+    top:184px;
+    z-index: 1;
+}
+/*设置左边背带上的扣子*/
+.pants-straps-l-circle{
+    width: 0;
+    height:0;
+    border:4px solid #000000;
+    border-radius: 50%;
+    position: absolute;
+    left: 89px;
+    top:6px;
+}
+/*遮挡背带左边溢出部分*/
+.baffle-l{
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-top: 4px solid #000;
+    position: absolute;
+    left:-32px;
+    top:-3px;
+    transform: rotate(45deg);
+
+}
+/*设置裤子的右边的背带*/
+.pants-straps-r{
+    width: 100px;
+    height: 20px;
+    border: 4px solid #000;
+    transform: rotate(-45deg);
+    background-color:#2074a0 ;
+    position: absolute;
+    left:175px;
+    top:184px;
+    z-index: 1;
+}
+/*设置右边背带上的扣子*/
+.pants-straps-r-circle{
+    width: 0;
+    height:0;
+    border:4px solid #000000;
+    border-radius: 50%;
+    position: absolute;
+    left:3px;
+    top:6px;
+}
+/*遮挡背带右边溢出部分*/
+.baffle-r{
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-left: 4px solid #000;
+    position: absolute;
+    left:66px;
+    top:1px;
+    transform: rotate(45deg);
+
+}
+/*设置裤子的上边的肚子部分*/
+.pants-bottom-top{
+    width: 166px;
+    height: 60px;
+    border:4px solid #000;
+    border-bottom-color: transparent;
+    background-color: #2074a0;
+    position: absolute;
+    left: 37px;
+    top:-68px;
+}
+/*设置裤子中央的兜*/
+.pants-bottom-center{
+    width: 67px;
+    height: 52px;
+    border:4px solid #000 ;
+    border-radius: 0 0 20px 20px;
+    position: absolute;
+    left:88px;
+    top:-16px;
+}
+/*设置裤子上边的竖直线*/
+.pants-bottom-center-b{
+    width: 0px;
+    height: 48px;
+    border: 3px solid #000;
+    border-radius: 1px;
+    position: absolute;
+    left: 30.5px;
+    top:80px;
+}
+/*设置裤子右边的弧度*/
+.pants-bottom-center-r{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 4px solid #000000;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    transform: rotate(-44deg);
+    position: absolute;
+    left:118px;
+    top:-13px;
+}
+/*设置裤子左边的弧度*/
+.pants-bottom-center-l{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 4px solid #000000;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    transform: rotate(44deg);
+    position: absolute;
+    left:-115px;
+    top:-13px;
+}
+/*设置小黄人的胳膊*/
+.arm{
+    position: relative;
+}
+.arm-l{
+    width: 100px;
+    height: 100px;
+    border: 4px solid #000;
+    border-radius: 20px;
+    background-color:#f9d946 ;
+    transform: rotate(45deg);
+    position: absolute;
+    left:177px;
+    top:190px;
+    z-index: -1;
+}
+.arm-l-line{
+    width: 10px;
+    height: 0;
+    border: 3px solid #000;
+    border-radius: 5px;
+    transform: rotate(90deg);
+    position: absolute;
+    left: 14px;
+    top:63px;
+}
+.arm-r{
+    width: 100px;
+    height: 100px;
+    border: 4px solid #000;
+    border-radius: 20px;
+    background-color:#f9d946 ;
+    transform: rotate(45deg);
+    position: absolute;
+    left:368px;
+    top:190px;
+    z-index: -1;
+}
+.arm-r-line{
+    width: 10px;
+    height: 0;
+    border: 3px solid #000;
+    border-radius: 5px;
+    transform: rotate(0deg);
+    position: absolute;
+    left: 59px;
+    top:18px;
+}
+/*设置小黄人的脚 */
+.footer-l{
+    width: 35px;
+    height: 100px;
+    background-color: #000000;
+    border-radius: 10px;
+    position: absolute;
+    left:293px;
+    top:350px;
+    z-index: -1;
+}
+.footer-l-h{
+    width: 70px;
+    height: 35px;
+    background-color: #000000;
+    border-radius: 24px 16px;
+    transform: rotate(4deg);
+    position: absolute;
+    left:-36px;
+    top:64px;
+}
+.footer-r{
+    width: 35px;
+    height: 100px;
+    background-color: #000000;
+    border-radius: 10px;
+    transform: rotate(-2deg);
+    position: absolute;
+    left:333px;
+    top:348px;
+    z-index: -1;
+    animation: anim 500ms linear infinite alternate;
+}
+@keyframes anim {
+    from{
+        transform: rotate(-2deg);
+    }
+    to{
+        transform: rotate(-8deg);
+    }
+}
+.footer-r-h{
+    width: 70px;
+    height: 35px;
+    background-color: #000000;
+    border-radius: 24px 16px;
+    transform: rotate(-6deg);
+    position: absolute;
+    left:1px;
+    top:64px;
+}
+.shadow{
+    width: 300px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #6a6a6a;
+    transform: rotate(0deg);
+    z-index: -2;
+    position: absolute;
+    left: 184px;
+    top:418px;
+    animation: anim4 500ms linear infinite alternate;
+}
+@keyframes anim4 {
+    0%{
+        box-shadow: 0 0 5px 10px yellow;
+        background-color: yellow;
+    }
+    25%{
+        box-shadow: 0 0 10px 15px red;
+        background-color: red;
+    }
+    50%{
+        box-shadow: 0 0 15px 20px pink;
+        background-color: pink;
+    }
+    75%{
+        box-shadow: 0 0 20px 25px greenyellow;
+        background-color: greenyellow;
+    }
+    100%{
+        box-shadow: 0 0 25px 30px blue;
+        background-color: blue;
+    }
+}
+
+.tri{
+    width: 80px;
+    height: 20px;
+    background-color: #000000;
+    position: absolute;
+    left: 600px;
+    bottom:-100px;
+    transform-origin: left;
+}
+.tri1{
+    transform: rotate(18deg);
+}
+.tri2{
+    transform: rotate(159deg);
+}
+.tri3{
+    transform: rotate(311deg);
+}
+.stick1{
+    width: 10px;
+    height: 500px;
+    background-color: #000000;
+    transform: rotate(-3deg);
+    position: absolute;
+    left:588px;
+    top:7px;
+}
+.stick2{
+    width: 400px;
+    height: 10px;
+    background-color: #000000;
+    transform: rotate(-41deg);
+    position: absolute;
+    left:342px;
+    top:112px;
+    z-index: 2;
+}
+.mic{
+    width: 200px;
+    height: 200px;
+    /*background-color: rgba(255,0,0,.5);*/
+    position: absolute;
+    left: 300px;
+    top:100px;
+}
+.mic-title{
+    width: 30px;
+    height: 40px;
+    background-color: silver;
+    border-radius: 10px;
+    position: absolute;
+    left:50px;
+    top:75px;
+    transform: rotate(-42deg);
+    z-index: 4;
+    background-image: repeating-linear-gradient(
+            rgba(255, 0,0, 0), rgba(255, 0,0, 0) 5px,
+            rgba(0, 0, 0, .3) 5px, rgba(0, 0, 0, .3) 10px
+    ) ,repeating-linear-gradient(
+            to right,
+            rgba(255, 0,0, 0), rgba(255, 0,0, 0) 5px,
+            rgba(0, 0, 0, .3) 10px, rgba(0, 0, 0, .3) 11px
+    );
+}
+.mic-bottom{
+    width: 15px;
+    height: 80px;
+    border-radius: 15px;
+    background-color: silver;
+    transform: rotate(-42deg);
+    position: absolute;
+    left: 83px;
+    top:83px;
+    z-index: 3;
+}
+
+.switch{
+    width: 0;
+    height: 2px;
+    border: 4px solid #333;
+    position: absolute;
+    left: 3px;
+    top:31px;
+}
+.line-m{
+    width: 4px;
+    height: 0;
+    border: 7px solid #000;
+    border-radius: 50%;
+    position: absolute;
+    left: 3px;
+    top:55px;
+}
+.light{
+    width: 2000px;
+    height:2000px;
+    position: absolute;
+    left: 700px;
+    top:-1200px;
+    background-image:radial-gradient(circle,
+        rgba(255,0,0,1) 0,rgba(255,0,0,1) 100px,
+        transparent 1000px,transparent
+    );
+    z-index: 5;
+}
